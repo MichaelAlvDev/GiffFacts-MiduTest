@@ -1,0 +1,17 @@
+.containter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:grey ;
+    width: 100%;
+    height: 80vh;
+}
+.text{
+    text-align: center;
+    padding: 10px;
+    width: 40%;
+}
+.giff{
+    max-width: 550px;
+}
