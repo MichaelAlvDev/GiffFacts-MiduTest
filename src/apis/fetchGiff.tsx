@@ -6,11 +6,9 @@ export async function fetchGif(factCut:string) {
         throw new Error("Failed fetch GIF");
     }
     const mainRes = await response.json();
-    console.log("obj original", mainRes);
+  
     const gifsRes = mainRes.data.map((gif: any) => ({
-        // url:`${gif.url}.gif`,
         url:gif.images.downsized_large.url,
-        bitly_gif_url:gif.bitly_gif_url,
     }));
     return gifsRes;
 

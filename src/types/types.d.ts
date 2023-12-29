@@ -4,5 +4,4 @@ export type facts = {
 };
 export type giff={
     url:string,
-    bitly_gif_url:string,
 };
