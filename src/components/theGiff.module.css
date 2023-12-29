@@ -1,47 +1,48 @@
-.containter{
+.containter {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    background-color:#fafafa;
+    background-color: #fafafa;
     height: 100vh;
     box-sizing: content-box;
     padding: 20px;
 }
-.text{
+
+.text {
     text-align: center;
     padding: 10px;
     flex: 40%;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 }
-.giff{
+
+.giff {
     flex: 60%;
     max-height: 500px;
     max-width: 400px;
 }
-.buttonCont{
+
+.buttonCont {
     display: flex;
-flex: 100%;
-align-items: center;
-justify-content:center;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
 }
-.buttonCont > button{
+
+.buttonCont>button {
     background: none;
     border: 1px solid;
     padding: 20px 50px;
     cursor: pointer;
     transition: 400ms;
 }
-.buttonCont > button:hover{
+
+.buttonCont>button:hover {
     background: rgb(19, 19, 37);
     cursor: pointer;
     color: #fafafa;
     transition: 400ms;
 }
-@media screen and (max-width: 700px) {
-    .containter {
-      flex-direction: column;
-    }
-  }
+
