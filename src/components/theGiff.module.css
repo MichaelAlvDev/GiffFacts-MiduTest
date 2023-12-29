@@ -1,10 +1,10 @@
 .containter{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color:rgb(202, 247, 255) ;
-    width: 100%;
+    background-color:#fafafa;
     height: 100vh;
     box-sizing: content-box;
     padding: 20px;
@@ -18,9 +18,28 @@
 }
 .giff{
     flex: 60%;
-    max-width: 550px;
+    max-height: 500px;
+    max-width: 400px;
 }
-
+.buttonCont{
+    display: flex;
+flex: 100%;
+align-items: center;
+justify-content:center;
+}
+.buttonCont > button{
+    background: none;
+    border: 1px solid;
+    padding: 20px 50px;
+    cursor: pointer;
+    transition: 400ms;
+}
+.buttonCont > button:hover{
+    background: rgb(19, 19, 37);
+    cursor: pointer;
+    color: #fafafa;
+    transition: 400ms;
+}
 @media screen and (max-width: 700px) {
     .containter {
       flex-direction: column;
