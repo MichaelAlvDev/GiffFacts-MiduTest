@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { fetchRandomCat } from "../apis/fetchRandomCat";
 import { facts, giff } from "../types/types";
@@ -10,10 +9,10 @@ const TheGiff = () => {
     fact: "",
     length: 0,
   });
+  const [factCut, setFactCut] = useState<string>("")
   const [giff, setGiff] = useState<giff[]>([{
     url: "",
   }]);//state para guardar el giff
-  const [factCut, setFactCut] = useState<string>("")
 
   useEffect(() => {
     const fetchRandomFact = async () => {// para obtener el randomFACT
@@ -21,8 +20,9 @@ const TheGiff = () => {
       setRandomFact(randomCatFact);
       //aqui
       const cutted = randomCatFact.fact.split(" ");
-      console.log(cutted)
-      setFactCut("5052")
+      const shortFact = `${cutted[0]} ${cutted[1]} ${cutted[2]}`
+     // console.log(shortFact) aqui estoy asignando el string cortado a shortFact y shortFactse va a factCut que es el parametro de string que recibe el fetch gif para poder mostrar el gif en pantalla, el error creo que esta en que son 2 funciones asincronas separadas dentro del effect y por eso no tengo el string al momento de buscar el  gif creo.... 
+      setFactCut(shortFact)
     }
     fetchRandomFact();
 
