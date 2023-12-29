@@ -21,18 +21,18 @@ const TheGiff = () => {
       //aqui
       const cutted = randomCatFact.fact.split(" ");
       const shortFact = `${cutted[0]} ${cutted[1]} ${cutted[2]}`
-     // console.log(shortFact) aqui estoy asignando el string cortado a shortFact y shortFactse va a factCut que es el parametro de string que recibe el fetch gif para poder mostrar el gif en pantalla, el error creo que esta en que son 2 funciones asincronas separadas dentro del effect y por eso no tengo el string al momento de buscar el  gif creo.... 
+      // console.log(shortFact) aqui estoy asignando el string cortado a shortFact y shortFactse va a factCut que es el parametro de string que recibe el fetch gif para poder mostrar el gif en pantalla, el error creo que esta en que son 2 funciones asincronas separadas dentro del effect y por eso no tengo el string al momento de buscar el  gif creo.... 
       setFactCut(shortFact)
     }
     fetchRandomFact();
-
+  }, [])
+  useEffect(() => {
     const fetchGiff = async () => {//para obtener el GIFF
       const fetchedGif = await fetchGif(factCut);
       setGiff(fetchedGif);
     }
     fetchGiff();
-
-  }, [])
+  }, [factCut])
 
 
 
