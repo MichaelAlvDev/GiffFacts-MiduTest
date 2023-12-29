@@ -9,20 +9,19 @@ const TheGiff = () => {
     fact: "",
     length: 0,
   });
-  const [giff, setGiff] = useState<giff[]>([{
+  const [giff, setGiff] = useState<giff>({
     url: "",
-  }]);//state para guardar el giff
+  });//state para guardar el giff
 
   useEffect(() => {
     const fetchRandomFact = async () => {// para obtener el randomFACT
       const randomCatFact = await fetchRandomCat();
       setRandomFact(randomCatFact); //string completo
-
       const cutted = randomCatFact.fact.split(" ");
       const shortFact = `${cutted[0]} ${cutted[1]} ${cutted[2]}`
       const fetchedGif = await fetchGif(shortFact);
-      //test Random Luego
-      setGiff(fetchedGif);
+      const randomGif = fetchedGif[Math.floor(Math.random() * fetchedGif.length)]
+      setGiff(randomGif);
       }
     fetchRandomFact();
   }, [])
@@ -30,7 +29,7 @@ const TheGiff = () => {
   return (
     <>
       <div className={styles.containter}>
-        <img src={giff[0]?.url} alt="" className={styles.giff} />
+        <img src={giff?.url} alt="" className={styles.giff} />
         <h1 className={styles.text}>{randomFact.fact}</h1>
       </div>
 
